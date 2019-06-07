@@ -35,6 +35,14 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 # one should look at other modules makefile to add more
 # In most case, one should ignore the following lines:
 
+ifneq ($(strip $(S7PLC_DEP_VERSION)),)
+asyn_VERSION=$(S7PLC_DEP_VERSION)
+endif
+
+ifneq ($(strip $(MODBUS_DEP_VERSION)),)
+asyn_VERSION=$(MODBUS_DEP_VERSION)
+endif
+
 #ifneq ($(strip $(ASYN_DEP_VERSION)),)
 #asyn_VERSION=$(ASYN_DEP_VERSION)
 #endif
@@ -53,6 +61,10 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 # APPDB:=$(APP)/Db
 # APPSRC:=$(APP)/src
 
+APP:=src
+APPSRC:=$(APP)
+APPDB:=db
+
 
 # USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 
@@ -63,10 +75,10 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 # USR_CPPFLAGS += -Wno-unused-function
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
-# TEMPLATES += $(wildcard $(APPDB)/*.db)
-# TEMPLATES += $(wildcard $(APPDB)/*.db)
-# TEMPLATES += $(wildcard $(APPDB)/*.proto)
-# TEMPLATES += $(wildcard $(APPDB)/*.template)
+TEMPLATES += $(wildcard $(APPDB)/*.db)
+#TEMPLATES += $(wildcard $(APPDB)/*.db)
+#TEMPLATES += $(wildcard $(APPDB)/*.proto)
+#TEMPLATES += $(wildcard $(APPDB)/*.template)
 
 
 # DBDINC_SRCS += $(APPSRC)/swaitRecord.c
