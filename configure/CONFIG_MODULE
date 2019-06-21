@@ -1,7 +1,8 @@
 #
 EPICS_MODULE_NAME:=nblmplc
 
-EPICS_MODULE_TAG:=tags/1.0.0
+#EPICS_MODULE_TAG:=tags/1.0.0
+EPICS_MODULE_TAG:=master
 #
 E3_MODULE_VERSION:=master
 
