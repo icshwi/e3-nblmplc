@@ -6,7 +6,6 @@ require modbus,2.11.0p
 
 ## -- S7PLC --
 # add communications IOC (S7PLC + modbus)
-#> /opt/epics/modules/nblmPLC/1.0.0/startup/IOC_PROTOCOL_CONFIGURATION.cmd
 #s7plcConfigure("plcName",     "ip",          port, inByte, outByte, bigEndian, recTimeout, sendIntervall)
 s7plcConfigure("ESS_NBLM_PLC","10.2.176.36",2000,534,0,1,500,100)
 # var s7plcDebug 0
@@ -87,18 +86,18 @@ modbusInterposeConfig("ESS_NBLM_PLC508",0,1000,0)
 # modbusFunction = 16 : Write Multiple Holding Registers (2 bytes = one word) (write AS)
 # pollMsec: For write functions, a non-zero value means that the Modbus data should be read once when the port driver is first created.
 #
-#			portName,				tcpPortName,			slaveAddr,	modbusFct,	addr,			length,		dataType,	pollMsec,	plcType,
-drvModbusAsynConfigure("ESS_NBLM_PLC502_AS_WRITE_0",		"ESS_NBLM_PLC502",		1,		16,		0,			40,		8,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC508_AS_WRITE_0",		"ESS_NBLM_PLC508",		1,		16,		0,			6,		4,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC509_AS_WRITE_0",		"ESS_NBLM_PLC509",		1,		16,		0,			2,		8,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC503_AS_WRITE_0",		"ESS_NBLM_PLC503",		1,		16,		0,			40,		8,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC504_AS_WRITE_0",		"ESS_NBLM_PLC504",		1,		16,		0,			40,		8,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC507_AS_WRITE_0",		"ESS_NBLM_PLC507",		1,		16,		0,			40,		8,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC505_AS_WRITE_0",		"ESS_NBLM_PLC505",		1,		16,		0,			40,		8,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC506_AS_WRITE_0",		"ESS_NBLM_PLC506",		1,		16,		0,			40,		8,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC502_TS_WRITE_4000",		"ESS_NBLM_PLC502",		1,		5,		4000,		1640,	0,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC502_TS_WRITE_6400",		"ESS_NBLM_PLC502",		1,		5,		6400,		1640,	0,		1,		"SIEMENS")
-drvModbusAsynConfigure("ESS_NBLM_PLC502_TS_WRITE_8800",		"ESS_NBLM_PLC502",		1,		5,		8800,		3,		0,		1,		"SIEMENS")
+#					    portName,	                        tcpPortName,	        slaveAddr,	modbusFct,	addr,	length,	dataType,	pollMsec,	plcType,
+drvModbusAsynConfigure("ESS_NBLM_PLC502_AS_WRITE_0",		"ESS_NBLM_PLC502",		1,			16,			0,		40,		8,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC508_AS_WRITE_0",		"ESS_NBLM_PLC508",		1,			16,			0,		6,		4,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC509_AS_WRITE_0",		"ESS_NBLM_PLC509",		1,			16,			0,		2,		8,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC503_AS_WRITE_0",		"ESS_NBLM_PLC503",		1,			16,			0,		40,		8,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC504_AS_WRITE_0",		"ESS_NBLM_PLC504",		1,			16,			0,		40,		8,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC507_AS_WRITE_0",		"ESS_NBLM_PLC507",		1,			16,			0,		40,		8,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC505_AS_WRITE_0",		"ESS_NBLM_PLC505",		1,			16,			0,		40,		8,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC506_AS_WRITE_0",		"ESS_NBLM_PLC506",		1,			16,			0,		40,		8,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC502_TS_WRITE_4000",		"ESS_NBLM_PLC502",		1,			5,			4000,	1640,	0,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC502_TS_WRITE_6400",		"ESS_NBLM_PLC502",		1,			5,			6400,	1640,	0,			1,			"SIEMENS")
+drvModbusAsynConfigure("ESS_NBLM_PLC502_TS_WRITE_8800",		"ESS_NBLM_PLC502",		1,			5,			8800,	3,		0,			1,			"SIEMENS")
 
 #=======================================================
 
