@@ -1,8 +1,8 @@
 require nblmplc, master
 
 # PLC communication
-require s7plc,1.4.0p
-require modbus,2.11.0p
+require s7plc,master
+require modbus,master
 
 ## -- S7PLC --
 # add communications IOC (S7PLC + modbus)
@@ -106,4 +106,5 @@ drvModbusAsynConfigure("ESS_NBLM_PLC502_TS_WRITE_8800",		"ESS_NBLM_PLC502",		1,	
 # load database
 dbLoadRecords("iocEss_nblm.db") 
 
+iocInit
 
