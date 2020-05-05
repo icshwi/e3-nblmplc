@@ -1,8 +1,8 @@
 require nblmplc, master
 
 # PLC communication
-require s7plc,master
-require modbus,master
+require s7plc,1.4.1
+require modbus,3.0.0
 
 ## -- S7PLC --
 # add communications IOC (S7PLC + modbus)
