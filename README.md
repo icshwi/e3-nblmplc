@@ -1,5 +1,5 @@
+# DEPRECATION NOTICE
 
-e3-nblmplc  
-======
-ESS Site-specific EPICS IOC Application : nblmplc
+## 2020-09-21
 
+This remote has been deprecated. New target available at: https://gitlab.esss.lu.se/e3/bi/e3-nblmplc
